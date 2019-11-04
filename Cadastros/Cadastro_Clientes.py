@@ -1,3 +1,4 @@
+import pycep_correios
 clientes = []
 ano_atual = 2019
 clnt_cdg = 1000  # Padrao codigo clientes, iniciando no 1000.
@@ -11,12 +12,15 @@ def cadastro_cliente():
     clnt_cpf = input('CPF (Apenas numeros): ')
     clnt_rg = input('RG (Apenas numeros): ')
     clnt_dt_nasc = input('Data de nascimento: ').split('/' or ' ')
+    clnt_cep = input('Digite o CEP (Apenas numeros): ')
+    clnt_endereco = pycep_correios.consultar_cep(clnt_cep)
     clnt_idade = ano_atual - int(clnt_dt_nasc[2])
     clientes.append(clnt_cdg)  # 0
     clientes.append(clnt_nome)  # 1
     clientes.append(clnt_rg)  # 2
     clientes.append(clnt_cpf)  # 3
     clientes.append(clnt_idade)  # 4
+    clientes.append(clnt_endereco)   # 5
 
 
 def consulta_cliente():
@@ -29,7 +33,8 @@ def consulta_cliente():
     Nome: {clientes[1]}
     RG: {clientes[2]}
     CPF: {clientes[3]}
-    Idade: {clientes[4]}""")
+    Idade: {clientes[4]}
+    Endereco: {clientes[5]}""")
     else:
         print('O usuario com este codigo nao consta na base de dados.')
 
