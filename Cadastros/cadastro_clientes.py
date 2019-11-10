@@ -14,8 +14,7 @@ def insere_nome():
         if (clnt_nome.isnumeric()) or (not clnt_nome.isalpha()):
             print('Nome não pode conter numeros, tente novamente.')
         else:
-            clientes.append(clnt_nome)  # 1
-            break
+            return clnt_nome
 
 
 def insere_cpf():
@@ -28,8 +27,7 @@ def insere_cpf():
         if not (clnt_cpf.isnumeric()) or (len(clnt_cpf) != 11):
             print('CPF inválido. Tente novamente.')
         else:
-            clientes.append(clnt_cpf)  # 3
-            break
+            return clnt_cpf
 
 
 def insere_rg():
@@ -42,8 +40,7 @@ def insere_rg():
         if not clnt_rg.isnumeric():
             print('RG nao pode conter letras')
         else:
-            clientes.append(clnt_rg)  # 2
-            break
+            return clnt_rg
 
 
 def insere_data():
@@ -55,8 +52,7 @@ def insere_data():
         clnt_dt_nasc = input('Data de nascimento: ').split('/' or ' ')
         if not (clnt_dt_nasc[0].isnumeric()) or (clnt_dt_nasc[1].isnumeric()) or (clnt_dt_nasc[2].isnumeric()):
             clnt_idade = ano_atual - int(clnt_dt_nasc[2])
-            clientes.append(clnt_idade)  # 4
-            break
+            return clnt_idade
         else:
             print('Data de nascimento inválida. Tente novamente.')
 
@@ -72,9 +68,7 @@ def insere_cep():
             print('CEP incorreto. Verifique e tente novamente.')
         else:
             clnt_endereco = pycep_correios.consultar_cep(clnt_cep)
-            clientes.append(clnt_endereco)   # 5
-            break
-    return clnt_endereco
+            return clnt_endereco
 
 
 def cadastro_cliente():
@@ -85,12 +79,12 @@ def cadastro_cliente():
     global clnt_cdg
     clnt_cdg += 1
     print(f'Cadastrando usuario {clnt_cdg}')
-    clientes.append(clnt_cdg)  # 0
-    insere_nome()  # 1
-    insere_cpf()   # 2
-    insere_rg()    # 3
-    insere_data()  # 4
-    insere_cep()   # 5
+    clnt_nome = insere_nome()  # 1
+    clnt_cpf = insere_cpf()   # 2
+    clnt_rg = insere_rg()    # 3
+    clnt_idade = insere_data()  # 4
+    clnt_endereco = insere_cep()   # 5
+    clientes.append([clnt_cdg, clnt_nome, clnt_cpf, clnt_rg, clnt_idade, clnt_endereco])
 
 
 def consulta_cliente():
