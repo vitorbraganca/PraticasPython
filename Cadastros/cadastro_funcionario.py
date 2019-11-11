@@ -77,9 +77,9 @@ def funcionario_insere_telefone():
     Verifica se o telefone possui alguma letra.
     """
     while True:
-        func_tel = input('Digite o telefone com DDD (somente numeros): ')
-        if not func_tel.isnumeric():
-            print('Telefone não pode possuir letras. Verifique e tente novamente.')
+        func_tel = int(input('Digite o telefone com DDD (somente numeros): '))
+        if func_tel < 10:
+            print('Telefone invalido. Verifique e tente novamente.')
         else:
             return func_tel
 
@@ -98,26 +98,6 @@ def cadastro_funcionario():
     func_rg = funcionario_insere_rg()    # 3
     func_idade = funcionario_insere_data()  # 4
     func_endereco = funcionario_insere_cep()   # 5
-    func_tel = funcionario_insere_telefone()
-    funcionarios.append([[func_cdg], func_nome, func_cpf, func_rg, func_idade, func_endereco, func_tel])
+    func_tel = funcionario_insere_telefone()   # 6
+    funcionarios.append([func_cdg, func_nome, func_cpf, func_rg, func_idade, func_endereco, func_tel])
 
-
-def consulta_funcionario():
-    """
-    Função para a consulta do cliente a partir do código único.
-    """
-    global func_cdg, funcionarios
-    consulta = int(input('Codigo: '))
-    if consulta in funcionarios:
-        print('Cadastrado')
-        print(f"""  
-Codigo: {funcionarios[0]}
-Nome: {funcionarios[1]}
-RG: {funcionarios[2]}
-CPF: {funcionarios[3]}
-Idade: {funcionarios[4]}
-Endereco:""")  # Impressão dos dados do cliente consultado
-        for key in funcionarios[5]:  # Estrutura deee repeticao para impressao formatada do dicionario ENDEREÇO
-            print("{0}\t\t{1}".format(key, funcionarios[5][key]))
-    else:
-        print('O usuario com este codigo nao consta na base de dados.')

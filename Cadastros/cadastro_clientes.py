@@ -86,23 +86,3 @@ def cadastro_cliente():
     clnt_endereco = insere_cep()   # 5
     clientes.append([clnt_cdg, clnt_nome, clnt_cpf, clnt_rg, clnt_idade, clnt_endereco])
 
-
-def consulta_cliente():
-    """
-    Função para a consulta do cliente a partir do código único.
-    """
-    global clnt_cdg, clientes
-    consulta = int(input('Codigo: '))
-    if consulta in clientes:
-        print('Cadastrado')
-        print(f"""  
-Codigo: {clientes[0]}
-Nome: {clientes[1]}
-RG: {clientes[2]}
-CPF: {clientes[3]}
-Idade: {clientes[4]}
-Endereco:""")  # Impressão dos dados do cliente consultado
-        for key in clientes[5]:  # Estrutura de repeticao para impressao formatada do dicionario ENDEREÇO
-            print("{0}\t\t{1}".format(key, clientes[5][key]))
-    else:
-        print('O usuario com este codigo nao consta na base de dados.')

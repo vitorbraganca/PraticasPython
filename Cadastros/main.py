@@ -1,8 +1,10 @@
 """
 Código principal do programa
 """
+
 # Importar todos os outros programas a partir do programa GUI
-from Cadastro.GUI import *
+from Cadastros.GUI import *
+
 while True:
     print(menu_principal)
     user = int(input('Opcao de usuario: '))

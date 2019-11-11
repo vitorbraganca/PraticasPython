@@ -1,15 +1,18 @@
 """
 Aparência do programa, interface.
 """
-from Cadastro.cadastro_clientes import consulta_cliente, cadastro_cliente
-from Cadastro.cadastro_funcionario import cadastro_funcionario
-from Cadastro.listar import listar_funcionarios, listar_clientes
+
+from Cadastros.cadastro_clientes import cadastro_cliente
+from Cadastros.cadastro_funcionario import cadastro_funcionario
+from Cadastros.listar import listar_funcionarios, listar_clientes
+from Cadastros.consultar import consultar_funcionario_cod, consultar_clientes_cod
 
 # Menus de opcoes
 menu_principal = """
 1- Usuario: Gerente
 2- Usuario: Funcionario
-3- Encerrar aplicação\n"""
+3- Encerrar aplicação\n
+"""
 opcoes_funcionario = """
 1- Gestao de clientes
 2- Venda
@@ -20,21 +23,23 @@ opcoes_gerente = """
 1- Gestao de funcionarios
 2- Gestao de clientes
 3- Gestao de produtos
-4- Deslogar como gerente\n"""
+4- Deslogar como gerente\n
+"""
 menu_funcionario = """
 1 - Cadastrar funcionario
 2- Consultar funcionario
 3- Listar todos funcionarios
 4- Editar dados de funcionarios
-5- Sair\n"""
+5- Sair\n
+"""
 menu_clientes = """
 1 - Cadastrar cliente
 2- Consultar cliente
 3- Listar todos clientes
 4- Editar dados de clientes
-5- Sair\n"""
+5- Sair\n
+"""
 rodape = """Encerrando aplicaçao... Obrigado por usar!
-
 
 Desenvolvido por:
 - Vítor Eduardo Bragança
@@ -47,6 +52,10 @@ Desenvolvido por:
 """
 
 
+def linha(mult):
+    print('-='*mult)
+
+
 def gestao_funcionario():
     while True:
         print(menu_funcionario)
@@ -55,7 +64,7 @@ def gestao_funcionario():
             cadastro_funcionario()
         elif op == 2:
             while True:
-                consulta_cliente()
+                consultar_funcionario_cod()
                 resp = input(
                     'Deseja consultar novamente? ').upper()  # Deixando em caixa alta para reduzir possibilidades
                 if resp.startswith('N'):
@@ -85,7 +94,7 @@ def gestao_cliente():
             cadastro_cliente()
         elif op == 2:
             while True:
-                consulta_cliente()
+                consultar_clientes_cod()
                 resp = input(
                     'Deseja consultar novamente? ').upper()  # Deixando em caixa alta para reduzir possibilidades
                 if resp.startswith('N'):
