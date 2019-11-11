@@ -102,7 +102,7 @@ RG: {clientes[2]}
 CPF: {clientes[3]}
 Idade: {clientes[4]}
 Endereco:""")  # Impressão dos dados do cliente consultado
-        for key in clientes[5]:  # Estrutura deee repeticao para impressao formatada do dicionario ENDEREÇO
+        for key in clientes[5]:  # Estrutura de repeticao para impressao formatada do dicionario ENDEREÇO
             print("{0}\t\t{1}".format(key, clientes[5][key]))
     else:
         print('O usuario com este codigo nao consta na base de dados.')
