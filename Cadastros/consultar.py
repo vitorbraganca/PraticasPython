@@ -3,10 +3,6 @@ Código para consulta de funcionarios, clientes e produtos.
 """
 from Cadastros.cadastro_funcionario import *
 from Cadastros.cadastro_clientes import *
-try:
-    from Cadastros.GUI import linha
-except ImportError:
-    from Cadastros.GUI import *
 
 
 def consultar_funcionario_cod():
@@ -17,7 +13,7 @@ def consultar_funcionario_cod():
     for elemento in funcionarios:
         if consulta in elemento:
             print('Usuário está cadastrado. \nExibindo dados...')
-            linha(50)
+            #linha(50)
         else:
             print('Usuario nao encontrado na nossa base de dados.')
 
@@ -30,6 +26,6 @@ def consultar_clientes_cod():
     for elemento in clientes:
         if consulta in elemento:
             print('Usuário está cadastrado. \nExibindo dados...')
-            linha(50)
+            #linha(50)
         else:
             print('Usuario nao encontrado na nossa base de dados.')

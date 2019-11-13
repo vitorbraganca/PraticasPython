@@ -4,7 +4,7 @@ ano_atual = 2019
 clnt_cdg = 1000  # Padrao codigo clientes, iniciando no 1000.
 
 
-def insere_nome():
+def clnt_insere_nome():
     """
     Função para inserção do nome do cliente, verificando possíveis erros.
     Verifica se o nome possui algum numero.
@@ -17,7 +17,7 @@ def insere_nome():
             return clnt_nome
 
 
-def insere_cpf():
+def clnt_insere_cpf():
     """
     Função para inserção do CPF do cliente, verificando possíveis erros.
     Verifica se o CPF possui letras ou menos de 11 digitos, padrao no BR.
@@ -30,7 +30,7 @@ def insere_cpf():
             return clnt_cpf
 
 
-def insere_rg():
+def clnt_insere_rg():
     """
     Função para inserção do RG do cliente, verificando possíveis erros.
     Verifica se o RG possui alguma letra.
@@ -43,7 +43,7 @@ def insere_rg():
             return clnt_rg
 
 
-def insere_data():
+def clnt_insere_data():
     """
     Função para inserção da data de nascimento do cliente, verificando possíveis erros.
     Obtém a idade a partir da subtração do ano atual com o ano de nascimento.
@@ -57,7 +57,7 @@ def insere_data():
             print('Data de nascimento inválida. Tente novamente.')
 
 
-def insere_cep():
+def clnt_insere_cep():
     """
     Função para inserção do CEP do cliente, verificando possíveis erros.
     Verifica se o RG possui alguma letra.
@@ -71,6 +71,26 @@ def insere_cep():
             return clnt_endereco
 
 
+def clnt_insere_telefone():
+    """
+    Função para inserção do telefone do cliente, verificando possíveis erros.
+    Verifica se o telefone possui alguma letra.
+    """
+    while True:
+        clnt_telefone = int(input('Digite o telefone com DDD (apenas numeros): '))
+        if clnt_telefone < 11:
+            print('Telefone incorreto. Verifique e tente novamente.')
+        else:
+            return clnt_telefone
+
+
+def clnt_insere_email():
+    """
+    Função para inserção do email do cliente.
+    """
+    clnt_email = input('Insira o e-mail do cliente:')
+    return clnt_email
+
 def cadastro_cliente():
     """
     Função para o cadastro do cliente, adicionando um código único a cada cliente.
@@ -79,10 +99,11 @@ def cadastro_cliente():
     global clnt_cdg
     clnt_cdg += 1
     print(f'Cadastrando usuario {clnt_cdg}')
-    clnt_nome = insere_nome()  # 1
-    clnt_cpf = insere_cpf()   # 2
-    clnt_rg = insere_rg()    # 3
-    clnt_idade = insere_data()  # 4
-    clnt_endereco = insere_cep()   # 5
-    clientes.append([clnt_cdg, clnt_nome, clnt_cpf, clnt_rg, clnt_idade, clnt_endereco])
-
+    clnt_nome = clnt_insere_nome()  # 1
+    clnt_cpf = clnt_insere_cpf()   # 2
+    clnt_rg = clnt_insere_rg()    # 3
+    clnt_idade = clnt_insere_data()  # 4
+    clnt_endereco = clnt_insere_cep()   # 5
+    clnt_telefone = clnt_insere_telefone() # 6
+    clnt_email = clnt_insere_email()  # 7
+    clientes.append([clnt_cdg, clnt_nome, clnt_cpf, clnt_rg, clnt_idade, clnt_endereco, clnt_telefone, clnt_email])

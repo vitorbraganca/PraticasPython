@@ -2,13 +2,14 @@
 Aparência do programa, interface.
 """
 
-from Cadastros.cadastro_clientes import cadastro_cliente
+# Menus de opcoes
 from Cadastros.cadastro_funcionario import cadastro_funcionario
+from Cadastros.cadastro_clientes import cadastro_cliente
 from Cadastros.listar import listar_funcionarios, listar_clientes
 from Cadastros.consultar import consultar_funcionario_cod, consultar_clientes_cod
 
-# Menus de opcoes
-menu_principal = """
+
+menu_principal = """ 
 1- Usuario: Gerente
 2- Usuario: Funcionario
 3- Encerrar aplicação\n
@@ -50,10 +51,6 @@ Desenvolvido por:
 
 \n
 """
-
-
-def linha(mult):
-    print('-='*mult)
 
 
 def gestao_funcionario():
