@@ -2,13 +2,13 @@
 Código principal do programa
 """
 
-
-
 # Importar todos os outros programas a partir do programa GUI
+
 try:
     from Cadastros.GUI import *
 except ImportError:
     from Cadastros.GUI import menu_principal, gestao_cliente, opcoes_funcionario, opcoes_gerente, gestao_funcionario, rodape
+
 
 while True:
     print(menu_principal)
@@ -23,7 +23,7 @@ while True:
             elif op == 2:
                 gestao_cliente()
             elif op == 3:
-                print('Funcionalidade em desenvolvimento...')
+                gestao_produtos()
             elif op == 4:
                 print('Deslogando...')
                 break

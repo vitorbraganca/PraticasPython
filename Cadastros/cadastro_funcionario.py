@@ -139,5 +139,5 @@ def cadastro_funcionario():
     func_cargo = funcionario_insere_cargo()  # 7
     func_funcao = funcionario_insere_funcao()  # 8
     func_salario = funcionario_insere_salario()  # 9
-    func_dt_ing = funcionario_insere_data_ingresso()
+    func_dt_ing = funcionario_insere_data_ingresso()  # 10
     funcionarios.append([func_cdg, func_nome, func_cpf, func_rg, func_idade, func_endereco, func_tel, func_cargo, func_funcao, func_salario, func_dt_ing])

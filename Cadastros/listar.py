@@ -1,5 +1,7 @@
 from Cadastros.cadastro_clientes import clientes
 from Cadastros.cadastro_funcionario import funcionarios
+from Cadastros.cadastro_produtos import produtos
+
 
 def linha(multi):
     print('-='*multi)
@@ -22,7 +24,7 @@ def listar_clientes():
         print(f'Logradouro: {i[5]["end"]}')
         print(f'UF: {i[5]["uf"]}')
         linha(25)
-
+    print('Lista finalizada')
 
 def listar_funcionarios():
     for i in funcionarios:
@@ -45,3 +47,14 @@ def listar_funcionarios():
         print(f'UF: {i[5]["uf"]}')
         linha(25)
     print('Lista finalizada.')
+
+
+def listar_produtos():
+    for i in produtos:
+        linha(25)
+        print(f'Codigo: {i[0]}')
+        print(f'Nome: {i[1]}')
+        print(f'Valor: {i[2]}')
+        print(f'Quantidade em estoque: {i[3]}')
+        linha(25)
+    print('Lista finalizada')

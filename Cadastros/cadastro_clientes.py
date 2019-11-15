@@ -91,6 +91,7 @@ def clnt_insere_email():
     clnt_email = input('Insira o e-mail do cliente:')
     return clnt_email
 
+
 def cadastro_cliente():
     """
     Função para o cadastro do cliente, adicionando um código único a cada cliente.
@@ -104,6 +105,6 @@ def cadastro_cliente():
     clnt_rg = clnt_insere_rg()    # 3
     clnt_idade = clnt_insere_data()  # 4
     clnt_endereco = clnt_insere_cep()   # 5
-    clnt_telefone = clnt_insere_telefone() # 6
+    clnt_telefone = clnt_insere_telefone()  # 6
     clnt_email = clnt_insere_email()  # 7
     clientes.append([clnt_cdg, clnt_nome, clnt_cpf, clnt_rg, clnt_idade, clnt_endereco, clnt_telefone, clnt_email])
