@@ -20,7 +20,7 @@ def Venda_a():
                 inserirP = int(input('Digite o codigo do produto: '))
                 for elemento in produtos:
                     if inserirP in elemento:
-                        indexx = len(produtos)
+                        b_qntd = int(elemento(1))
                         #tem que puxar tudo do produto
                         qntd_p = int(input('Digite a quantidade deste produto:'))
                         preco = qntd_p * #buscar quantidade do produto cadastrado
