@@ -16,9 +16,7 @@ menu_principal = """
 """
 opcoes_funcionario = """
 1- Gestao de clientes
-2- Venda
-3- Fechar caixa
-4- Deslogar como funcionario\n
+2- Deslogar como funcionario\n
 """
 opcoes_gerente = """
 1- Gestao de funcionarios
