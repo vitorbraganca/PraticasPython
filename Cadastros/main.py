@@ -36,12 +36,10 @@ while True:
             if op == 1:
                 gestao_cliente()
             elif op == 2:
-                print('Funcionalidade em desenvolvimento')
-            elif op == 3:
-                print('Funcionalidade em desenvolvimento')
-            elif op == 4:
                 print('Deslogando como funcionario...')
                 break
+            else: 
+                print('Funcao não encontrada.')
     elif user == 3:
         print(rodape)
         break
